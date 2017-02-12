@@ -1,6 +1,6 @@
 {
   "name": "sortme",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple sorting library written in ES6",
   "main": "build/sortme.js",
   "scripts": {

@@ -1,15 +1,43 @@
 var sortme = require('../build/sortme.js');
 
+// sort numbers
 var numarr = [6, 2, 9, 5, 7, 1, 9, 3, 8, 9, 9, 3]
 
 var ms = new sortme.MergeSort(numarr, {autorun : true});
-console.log(numarr);
-console.log(ms.findAll(3));
 
+// sort an object
+var objArr = [
+    {
+        name : 'Mahum Fatma',
+        firstName : 'Mahum',
+        lastName : 'Fatma',
+        id : 5
+    },
+    {
+        name : 'Ariel Saldana',
+        firstName : 'Ariel',
+        lastName : 'Saldana',
+        id : 1
+    },
+    {
+        name : 'Sayma Fatima',
+        firstName : 'Sayma',
+        lastName : 'Fatima',
+        id : 2
+    },
+    {
+        name : 'Whosan Ali',
+        firstName : 'Whosan',
+        lastName : 'Ali',
+        id : 3
+    },
+    {
+        name : 'Gabriel Rivera',
+        firstName : 'Gabriel',
+        lastName : 'Rivera',
+        id : 4
+    },
+];
 
-var objArr = [ {x:6}, {x:2}, {x:9}, {x:5}, {x:7}, {x:1}, {x:9}, {x:3}, {x:8}, {x:8}, {x:9} ];
-
-var ms = new sortme.MergeSort(objArr, {key:'x'});
-
-console.log(objArr);
-console.log(ms.findAll(5));
+var ms = new sortme.MergeSort(objArr, {key:'lastName'});
+console.log(objArr[ms.find('Fatma')].firstName);
