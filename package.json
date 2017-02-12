@@ -2,7 +2,7 @@
   "name": "sortme",
   "version": "0.0.1",
   "description": "Simple sorting library written in ES6",
-  "main": "sortme.class.js",
+  "main": "src/sortme.class.js",
   "scripts": {
     "build": "node node_modules/webpack/bin/webpack --watch"
   },
