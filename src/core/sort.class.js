@@ -7,7 +7,9 @@ export class Sort {
 
         this._config = {
             autorun : true,
-            watch : false
+            watch : false,
+            key : null,
+            copy : false
         }
 
         if (config)
@@ -41,7 +43,10 @@ export class Sort {
 
             var midPoint = Math.floor(((start+end)/2));
 
-            var num = this.data[midPoint];
+            if (this._config.key)
+                var num = this.data[midPoint][this._config.key];
+            else
+                var num = this.data[midPoint];
 
             if ( start >= end) {
                 return null;
@@ -88,5 +93,13 @@ export class Sort {
         }
 
         return indexes;
+    }
+
+    getArr() {
+        return this.data;
+    }
+
+    printArr() {
+        console.log(this.data);
     }
 }

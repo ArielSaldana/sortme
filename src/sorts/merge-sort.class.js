@@ -13,14 +13,14 @@ export class MergeSort extends Sort {
 
         // fill first half
         for (var i = start; i <= midPoint; i++) {
-            var num = arr[i];
-            firstHalf.push(num);
+            var obj = arr[i];
+            firstHalf.push(obj);
         }
 
         // fill second half 
         for (var i = midPoint + 1; i <= end; i++) {
-            var num = arr[i];
-            secondHalf.push(num);
+            var obj = arr[i];
+            secondHalf.push(obj);
         }
 
         var arrayPointer = start;
@@ -29,7 +29,17 @@ export class MergeSort extends Sort {
 
         while (firstArrayPointer < firstHalf.length && secondArrayPointer < secondHalf.length) {
 
-            if (firstHalf[firstArrayPointer] <= secondHalf[secondArrayPointer]) {
+            if (this._config.key != null) {
+                var firstArrayObj = firstHalf[firstArrayPointer][this._config.key];
+                var secondArrayObj = secondHalf[secondArrayPointer][this._config.key];
+            }
+
+            else {
+                var firstArrayObj = firstHalf[firstArrayPointer];
+                var secondArrayObj = secondHalf[secondArrayPointer];
+            }
+
+            if (firstArrayObj <= secondArrayObj) {
                 arr[arrayPointer] = firstHalf[firstArrayPointer];
                 firstArrayPointer++;
             } else {
@@ -38,7 +48,6 @@ export class MergeSort extends Sort {
             }
 
             arrayPointer++;
-
         }
 
         while (firstArrayPointer < firstHalf.length) {
@@ -52,7 +61,6 @@ export class MergeSort extends Sort {
             secondArrayPointer++;
             arrayPointer++;
         }
-
     }
 
     _mergeSort(start, end) {
@@ -71,7 +79,4 @@ export class MergeSort extends Sort {
         this.isSorted = true;
     }
 
-    printArr() {
-        console.log(this.data);
-    }
 }
