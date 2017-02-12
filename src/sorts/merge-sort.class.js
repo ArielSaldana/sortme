@@ -68,6 +68,7 @@ export class MergeSort extends Sort {
 
     sort() {
         this._mergeSort(0, this.data.length-1);
+        this.isSorted = true;
     }
 
     printArr() {

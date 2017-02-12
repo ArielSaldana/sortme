@@ -33,6 +33,9 @@ download the source at `./build/sortme.js`
 #### methods
 
  - sort : sort the array
+ - reverse : reverses the array
+ - find : finds an element in the array, returns the index
+ - findAll : finds all occurences of an element in the array, returns an array containing the indexes
  - printarr : print the array
 
 
