@@ -1,0 +1,56 @@
+<html>
+
+<head></head>
+
+<body>
+    <script src="../build/sortme.js"></script>
+    <script>
+        var timer = function (name) {
+            var start = new Date();
+            return {
+                stop: function () {
+                    var end = new Date();
+                    var time = end.getTime() - start.getTime();
+                    console.log('Timer:', name, 'finished in', time, 'ms');
+                }
+            }
+        };
+    </script>
+    <script>
+
+        var numarr = [];
+        var ammount = 400000;
+
+        for (var i = 0; i < ammount; i++) {
+            var num = Math.floor(Math.random() * 1000);
+            numarr.push(num);
+        }
+
+        var test1 = numarr.slice(0);
+        var test2 = numarr.slice(0);
+
+        var t = timer('Some label');
+        var ms = new sortme.MergeSort(test1);
+        ms.sort();
+        t.stop();
+
+        var t = timer('Some label');
+        test2.sort(function(a, b){return a - b});
+        t.stop();
+
+        var string = "cvSJHNKrdRTZfEZYh3kkaSqnqeEAWTWn7OF5LqJvi6bNW3YvlSADUguQVyjXASoDx9at9uqOWlrqHT1eYEhqh5642TPKG8qvhvSPRk58rLM36hE5s0m6m2DbgJ7gMIeq0KOs2DNd5pPKkFlJ3426qkfuHaSPifwY42ICEyJbHBrk1X83mLyYGAPvhQPysNKk8Xp00dW4Z71VvKTgrSL8NlcUNyv4WwYRFL0ElHEJyaDgv3BV7tZ4ZD1iAq5IYH0NCEBre0ABnhsimUM6ivJOTDKtr9Deo0tzwSyECDjULfpAgZW6vdDUDMPzcbkDO0mH1qU3RW9Rpqu5afnowg4vWpikgZWoRyLQuaAhi5YTJrW5sfbzr0HWYuVd1XjyZ4UMLKCmrVqrqzeHmbFuXkcSmiRaFRCAoG4ZoDdzdOuW2Nq45MZNbLTvjqlBnCwpmDv45n4E5jtOhWkEZImrXXUlU6l9e7YPene0Jg011fjiOiw3VIFu6nuwIl59d6aGwwCoAnRiYuM2JhmTiAHwoX1WzIEth5STDMF79BFnzpP1drTISPeSjQ134OHSEKtywv8Dq3zdaT2GczpBiazraw521itKAjiDpk6xDn1IQm3nnMRL8UAuYWUVSTfMsFDpLXUBnF56xwoYAQUMT96JLqUrlzXaW7BBgI8Naa5uaCnt0ZAZmd4UTLUK7SscLQWlKuuj6QZD4eJMfFHvSO0ofr6KccTnNMWCwtiq8190YPoSxUXWaSj8oUO7GhXiyDmw2NMUNhVcpRr8YeJBHUcwxfS9YbcSgHLeb4HHPzNKuaID8c97OTSDHzHzlyCC6WNRTjmFK23ZirfWoOSvxG1oSRgsJxjkec3YHnHH3HL1Fp0ZR6XmisIeOCSzeQ793HlwypZtF4dL7twEskf198NbSy6KNzICgi2m4262UdIBTlMt2voaLbRDiyXWGtGzNcTcPnHZvWFZFlPiUBzU17Rk0Y1Rj75a51dslmyRfm3pN3u".split('');
+        var string2 = "cvSJHNKrdRTZfEZYh3kkaSqnqeEAWTWn7OF5LqJvi6bNW3YvlSADUguQVyjXASoDx9at9uqOWlrqHT1eYEhqh5642TPKG8qvhvSPRk58rLM36hE5s0m6m2DbgJ7gMIeq0KOs2DNd5pPKkFlJ3426qkfuHaSPifwY42ICEyJbHBrk1X83mLyYGAPvhQPysNKk8Xp00dW4Z71VvKTgrSL8NlcUNyv4WwYRFL0ElHEJyaDgv3BV7tZ4ZD1iAq5IYH0NCEBre0ABnhsimUM6ivJOTDKtr9Deo0tzwSyECDjULfpAgZW6vdDUDMPzcbkDO0mH1qU3RW9Rpqu5afnowg4vWpikgZWoRyLQuaAhi5YTJrW5sfbzr0HWYuVd1XjyZ4UMLKCmrVqrqzeHmbFuXkcSmiRaFRCAoG4ZoDdzdOuW2Nq45MZNbLTvjqlBnCwpmDv45n4E5jtOhWkEZImrXXUlU6l9e7YPene0Jg011fjiOiw3VIFu6nuwIl59d6aGwwCoAnRiYuM2JhmTiAHwoX1WzIEth5STDMF79BFnzpP1drTISPeSjQ134OHSEKtywv8Dq3zdaT2GczpBiazraw521itKAjiDpk6xDn1IQm3nnMRL8UAuYWUVSTfMsFDpLXUBnF56xwoYAQUMT96JLqUrlzXaW7BBgI8Naa5uaCnt0ZAZmd4UTLUK7SscLQWlKuuj6QZD4eJMfFHvSO0ofr6KccTnNMWCwtiq8190YPoSxUXWaSj8oUO7GhXiyDmw2NMUNhVcpRr8YeJBHUcwxfS9YbcSgHLeb4HHPzNKuaID8c97OTSDHzHzlyCC6WNRTjmFK23ZirfWoOSvxG1oSRgsJxjkec3YHnHH3HL1Fp0ZR6XmisIeOCSzeQ793HlwypZtF4dL7twEskf198NbSy6KNzICgi2m4262UdIBTlMt2voaLbRDiyXWGtGzNcTcPnHZvWFZFlPiUBzU17Rk0Y1Rj75a51dslmyRfm3pN3u".split('');
+
+        var t = timer('Some label');
+
+        var ms = new sortme.MergeSort(string);
+        ms.sort();
+        t.stop();
+
+        var t = timer('Some label');
+        string2.sort();
+        t.stop();
+    </script>
+</body>
+
+</html>
