@@ -2,8 +2,8 @@ import { Sort } from '../core/sort.class';
 
 export class MergeSort extends Sort {
 
-    constructor(arr) {
-        super(arr);
+    constructor(arr, config) {
+        super(arr, config);
     }
 
     _merge(start, midPoint, end) {
@@ -46,7 +46,7 @@ export class MergeSort extends Sort {
             firstArrayPointer++;
             arrayPointer++;
         }
-        
+
         while (secondArrayPointer > secondHalf.length) {
             arr[arrayPointer] = secondHalf[secondArrayPointer];
             secondArrayPointer++;
